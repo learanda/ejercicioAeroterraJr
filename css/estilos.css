@@ -1,0 +1,18 @@
+label {
+    font-weight: bold;
+}
+.formulario {
+    background-color:#d1d1d1;
+    border-radius: 5px;
+}
+.inputs {
+    border-color: #65a1d7;
+}
+.agregar {
+    width: 110px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #70ad47;
+    border-color: #548334;
+    border-radius: 7px;
+}
