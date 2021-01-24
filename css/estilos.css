@@ -21,3 +21,7 @@ label {
     border-color: #548334;
     border-radius: 7px;
 }
+#map {
+    height: 100%;
+    width: 100%;
+}
