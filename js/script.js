@@ -42,10 +42,11 @@ function agregarDatos() {
 }
 
 function agregarMarcador() {
-    var aeroterra = new google.maps.LatLng(nuevoPunto.arrayLatLng[0],nuevoPunto.arrayLatLng[1]);
+    var newMarker = new google.maps.LatLng(nuevoPunto.arrayLatLng[0],nuevoPunto.arrayLatLng[1]);
     var marker = new google.maps.Marker({
-        position: aeroterra,
-        map: map
+        position: newMarker,
+        map: map,
+        title: nuevoPunto.name
         });
-        map.setCenter(aeroterra);
+        map.setCenter(newMarker);
 }
