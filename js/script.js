@@ -30,5 +30,13 @@ function capturar() {
     //console.log(nombreCapturar, direcCapturar);
 
     var nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
-    console.log(nuevoPunto);
+    //console.log(nuevoPunto);
+    agregar();
+}
+
+var listadoDePuntos = [];
+
+function agregar() {
+    listadoDePuntos.push(nuevoPunto);
+    console.log(listadoDePuntos);
 }
