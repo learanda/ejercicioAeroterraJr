@@ -38,5 +38,6 @@ var listadoDePuntos = [];
 
 function agregar() {
     listadoDePuntos.push(nuevoPunto);
-    console.log(listadoDePuntos);
+    //console.log(listadoDePuntos);
+    document.getElementById("body").innerHTML += '<tr><td>' + nuevoPunto.name +'</td><td>' + nuevoPunto.direction + '</td><td>Ver/Ocultar-Eliminar</td></tr>';
 }
