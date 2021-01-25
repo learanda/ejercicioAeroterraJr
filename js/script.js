@@ -29,7 +29,7 @@ function capturar() {
     var coordCapturar = document.getElementById("coordinates").value;
     //console.log(nombreCapturar, direcCapturar);
 
-    var nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
+    nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
     //console.log(nuevoPunto);
     agregar();
 }
