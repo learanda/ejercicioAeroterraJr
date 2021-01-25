@@ -11,4 +11,18 @@ function initMap() {
     position: aeroterra,
     map: map,
     });
+
+}
+
+function capturar() {
+    function PuntoDeInteres(name, direction, phone, category, coordinates) {
+        this.name = name;
+        this.direction = direction;
+        this.phone = phone;
+        this.category = category;
+        this.coordinates = coordinates;
+    }
+    var nombreCapturar = document.getElementById("name").value;
+    var direcCapturar = document.getElementById("direction").value;
+    console.log(nombreCapturar, direcCapturar);
 }
