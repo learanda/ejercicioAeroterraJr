@@ -22,7 +22,13 @@ function capturar() {
         this.category = category;
         this.coordinates = coordinates;
     }
-    var nombreCapturar = document.getElementById("name").value;
+    var nameCapturar = document.getElementById("name").value;
     var direcCapturar = document.getElementById("direction").value;
-    console.log(nombreCapturar, direcCapturar);
+    var phoneCapturar = document.getElementById("phone").value;
+    var categCapturar = document.getElementById("category").value;
+    var coordCapturar = document.getElementById("coordinates").value;
+    //console.log(nombreCapturar, direcCapturar);
+
+    var nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
+    console.log(nuevoPunto);
 }
