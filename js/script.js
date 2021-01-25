@@ -2,7 +2,7 @@ function initMap() {
 
     var mapaBase = { lat: -34.6020549, lng: -58.3818864 };
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
         center: mapaBase
       });
@@ -39,5 +39,10 @@ function agregarDatos() {
 }
 
 function agregarMarcador() {
-
+    var aeroterra = new google.maps.LatLng(-34.59536953527917,-58.371560072037894);
+    var marker = new google.maps.Marker({
+        position: aeroterra,
+        map: map
+        });
+        map.setCenter(aeroterra);
 }
