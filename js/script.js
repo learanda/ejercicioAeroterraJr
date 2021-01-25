@@ -4,13 +4,8 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
-        center: mapaBase,
+        center: mapaBase
       });
-
-    var posicionBase = new google.maps.Map({
-    position: mapaBase,
-    map: map,
-    });
 
 }
 
