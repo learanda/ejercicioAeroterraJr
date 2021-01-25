@@ -15,17 +15,20 @@ function capturar() {
         this.direction = direction;
         this.phone = phone;
         this.category = category;
-        this.coordinates = coordinates;
+        this.arrayLatLng = coordinates;
     }
     var nameCapturar = document.getElementById("name").value;
     var direcCapturar = document.getElementById("direction").value;
     var phoneCapturar = document.getElementById("phone").value;
     var categCapturar = document.getElementById("category").value;
     var coordCapturar = document.getElementById("coordinates").value;
+    var arrayLatLng = coordCapturar.split(",");
+    
+    //console.log(arrayLatLng);
     //console.log(nombreCapturar, direcCapturar);
 
-    nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
-    //console.log(nuevoPunto);
+    nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, arrayLatLng);
+    console.log(nuevoPunto);
     agregarDatos();
 }
 
@@ -39,7 +42,7 @@ function agregarDatos() {
 }
 
 function agregarMarcador() {
-    var aeroterra = new google.maps.LatLng(-34.59536953527917,-58.371560072037894);
+    var aeroterra = new google.maps.LatLng(nuevoPunto.arrayLatLng[0],nuevoPunto.arrayLatLng[1]);
     var marker = new google.maps.Marker({
         position: aeroterra,
         map: map
