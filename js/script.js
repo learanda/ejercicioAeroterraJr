@@ -31,13 +31,18 @@ function capturar() {
 
     nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, coordCapturar);
     //console.log(nuevoPunto);
-    agregar();
+    agregarDatos();
 }
 
 var listadoDePuntos = [];
 
-function agregar() {
+function agregarDatos() {
     listadoDePuntos.push(nuevoPunto);
     //console.log(listadoDePuntos);
     document.getElementById("body").innerHTML += '<tr><td>' + nuevoPunto.name +'</td><td>' + nuevoPunto.direction + '</td><td>Ver/Ocultar-Eliminar</td></tr>';
+    agregarMarcador();
+}
+
+function agregarMarcador() {
+
 }
