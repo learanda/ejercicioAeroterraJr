@@ -49,4 +49,17 @@ function agregarMarcador() {
         title: nuevoPunto.name
         });
         map.setCenter(newMarker);
+
+    var popupText = '<div><b>Descripción:</b> ' + nuevoPunto.name + '</div>' + 
+                    '<div><b>Dirección:</b> ' + nuevoPunto.direction + '</div>' + 
+                    '<div><b>Teléfono:</b> ' + nuevoPunto.phone + '</div>' + 
+                    '<div><b>Coordenadas:</b> ' + nuevoPunto.arrayLatLng[0] + ',' + nuevoPunto.arrayLatLng[1] + '</div>';
+
+    var popupWindow = new google.maps.InfoWindow({
+        content: popupText
+    });
+
+    marker.addListener('click', function(){
+        popupWindow.open(map, marker);
+    })
 }
