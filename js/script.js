@@ -1,6 +1,6 @@
-window.onload = function(){
+/* window.onload = function(){
     console.log('onload');
-}
+} */
 
 function initMap() {
 
@@ -67,4 +67,21 @@ function agregarMarcador() {
         popupWindow.open(map, marker);
     })
     console.log(listadoDePuntos);
-}
+} 
+
+// Challenge
+var fs = require('fs');
+fs.readFile('listaMarcadores.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+        datosJsonObjeto = JSON.parse(data);   //se convierte el contenido del JSON en objeto
+        datosJsonObjeto.push({dato1: 1, dato2: 2});  //agrego datos de prueba al JSON
+        datosJson = JSON.stringify(datosJsonObjeto);    //reconvierto a JSON
+
+        fs.writeFile('listaMarcadores.json', datosJson, 'utf8', (err) => {    //vuelvo a escribir en el archivo JSON
+            if (err) throw err;
+            console.log('El marcador se guardó.');
+        });
+    }
+});
