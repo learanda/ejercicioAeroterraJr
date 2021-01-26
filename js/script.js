@@ -2,6 +2,7 @@
     console.log('onload');
 } */
 
+//Esta funcion hace que inicie un mapa base
 function initMap() {
 
     var mapaBase = { lat: -34.6020549, lng: -58.3818864 };
@@ -13,6 +14,9 @@ function initMap() {
 
 }
 
+//Capturo los datos del formulario
+//Creo objetos como nuevo punto
+//Llamo a la funcion agregarDatos
 function capturar() {
     function PuntoDeInteres(name, direction, phone, category, coordinates) {
         this.name = name;
@@ -36,8 +40,13 @@ function capturar() {
     agregarDatos();
 }
 
+//Array donde se almacenan los puntos ingresados en el formulario
 var listadoDePuntos = [];
 
+
+//Con el push agrego el punto recientemente creado en el array listadoDePuntos
+//Hago un innerHTML para escribir datos de nombre y direccion del nuevo punto en la tabla
+//LLamo a la funcion agregarMarcador
 function agregarDatos() {
     listadoDePuntos.push(nuevoPunto);
     //console.log(listadoDePuntos);
@@ -45,6 +54,10 @@ function agregarDatos() {
     agregarMarcador();
 }
 
+
+//Creo un objeto de latitud y longitud
+//Creo un nuevo marcador especificando posicion, mapa, titulo y seteo para que se centre el mapa en ese nuevo punto
+//Creo un popup con los datos requeridos que se va a abrir con un listener con el evento 'click'
 function agregarMarcador() {
     var newMarker = new google.maps.LatLng(nuevoPunto.arrayLatLng[0],nuevoPunto.arrayLatLng[1]);
     var marker = new google.maps.Marker({
@@ -69,7 +82,9 @@ function agregarMarcador() {
     console.log(listadoDePuntos);
 } 
 
+
 // Challenge
+/*
 var fs = require('fs');
 fs.readFile('listaMarcadores.json', 'utf8', function readFileCallback(err, data){
     if (err){
@@ -84,4 +99,4 @@ fs.readFile('listaMarcadores.json', 'utf8', function readFileCallback(err, data)
             console.log('El marcador se guardó.');
         });
     }
-});
+});*/
