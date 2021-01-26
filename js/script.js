@@ -1,3 +1,7 @@
+window.onload = function(){
+    console.log('onload');
+}
+
 function initMap() {
 
     var mapaBase = { lat: -34.6020549, lng: -58.3818864 };
@@ -28,7 +32,7 @@ function capturar() {
     //console.log(nombreCapturar, direcCapturar);
 
     nuevoPunto = new PuntoDeInteres(nameCapturar, direcCapturar, phoneCapturar, categCapturar, arrayLatLng);
-    console.log(nuevoPunto);
+    //console.log(nuevoPunto);
     agregarDatos();
 }
 
@@ -62,4 +66,5 @@ function agregarMarcador() {
     marker.addListener('click', function(){
         popupWindow.open(map, marker);
     })
+    console.log(listadoDePuntos);
 }
