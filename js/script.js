@@ -79,9 +79,7 @@ function agregarMarcador() {
                     '<div><b>Dirección:</b> ' + nuevoPunto.direction + '</div>' + 
                     '<div><b>Teléfono:</b> ' + nuevoPunto.phone + '</div>' + 
                     '<div><b>Coordenadas:</b> ' + nuevoPunto.arrayLatLng[0] + ',' + nuevoPunto.arrayLatLng[1] + '</div>' +
-                    '<span class="material-icons" id="hide">visibility</span>' +
-                    '<span> &macr;</span>' +
-                    '<span class="material-icons">delete</span>';
+                    '<span class="material-icons" id="hide">delete</span>';
     
 
     var popupWindow = new google.maps.InfoWindow({
@@ -95,9 +93,7 @@ function agregarMarcador() {
               setTimeout(() => {
                 var spanVisibilidad = document.getElementById("hide");
                 spanVisibilidad.addEventListener('click', function(){
-                
                     marker.setMap(null);
-                
                 })
               }, 10);
         }
