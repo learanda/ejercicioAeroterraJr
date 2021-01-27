@@ -50,7 +50,14 @@ var listadoDePuntos = [];
 function agregarDatos() {
     listadoDePuntos.push(nuevoPunto);
     //console.log(listadoDePuntos);
-    document.getElementById("body").innerHTML += '<tr><td>' + nuevoPunto.name +'</td><td>' + nuevoPunto.direction + '</td><td>Ver/Ocultar-Eliminar</td></tr>';
+    document.getElementById("body").innerHTML += '<tr><td>' + 
+                                                    nuevoPunto.name +'</td><td>' + 
+                                                    nuevoPunto.direction + 
+                                                    '</td><td>' +
+                                                    '<span class="material-icons">visibility</span>' +
+                                                    '<span> &macr;</span>' +
+                                                    '<span class="material-icons">delete</span>' +
+                                                    '</td></tr>';
     agregarMarcador();
 }
 
