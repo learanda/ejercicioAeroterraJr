@@ -122,20 +122,25 @@ function agregarMarcador() {
         llamadaAsincronica(); */
     })
     console.log(listadoDePuntos);
+}
 
-    
-    
-
-    /*
-    var spanVisibilidad = document.getElementById("hide");
-    if(spanVisibilidad){
-        spanVisibilidad.addEventListener('click', function(){
-            if(marker.setVisible(true)){
-                marker.setVisible(false);
-            } else { marker.setVisible(false); }
+function set(){
+    setTimeout(() => {
+        var newArray = listadoDePuntos.filter(function(element){
+            return (element.name == 'a');
         })
-    } else { console.log("null"); }*/
-} 
+        //console.log(newArray);
+        //console.log(newArray[0].arrayLatLng);
+
+        var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
+        //var mapaBase = { lat: -34.6020549, lng: -58.3818864 };
+
+        map.setCenter(centrarEn);
+      
+    }, 5000);
+    
+}
+set();
 
 
 
