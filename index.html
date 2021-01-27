@@ -82,7 +82,7 @@
 
                       <div class="row g-3 justify-content-end">
                           <div class="col-auto">
-                              <button type="submit" class="btn mt-2 agregar" onclick="capturar()">Agregar</button>
+                              <button type="submit" class="btn mt-2 botonBase agregar" onclick="capturar()">Agregar</button>
                           </div>
                       </div>
                   </div>
@@ -98,6 +98,20 @@
           </div>
           <!-- ========================= FIN SECCION DEL MAPA ========================= -->
 
+          <!-- ========================= INICIO SECCION DE BÚSQUEDA POR NOMBRE ========================= -->
+          <div class="col-12 formulario">
+            <form action="#">
+              <div class="row busqueda">
+                <div class="col-9">
+                  <input type="text" id="busquedaNombre" class="form-control inputs" placeholder="Ingrese nombre como figura en la tabla">
+                </div>
+                <div class="col-3">
+                  <button type="submit" class="btn botonBase" onclick="buscarPorNombre()">Buscar punto</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- ========================= FIN SECCION DE BÚSQUEDA POR NOMBRE ========================= -->
 
           <!-- ========================= INICIO SECCION DE LA TABLA ========================= -->
           <div class="col-12">

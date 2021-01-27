@@ -13,14 +13,19 @@ label {
 .inputs {
     border-color: #65a1d7;
 }
-.agregar {
-    width: 110px;
+.botonBase {
     font-size: 18px;
     font-weight: 500;
     color: #fff;
     background-color: #70ad47;
     border-color: #548334;
     border-radius: 7px;
+}
+.agregar {
+    width: 110px;
+}
+.busqueda {
+    padding: 10px 0 10px 0;
 }
 #map {
     height: 300px;
