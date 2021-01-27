@@ -12,6 +12,27 @@ function initMap() {
         center: mapaBase
       });
 
+    //Crea un una ventana de información
+    let infoWindow = new google.maps.InfoWindow({
+    content: "Click en el mapa para obtener Lat/Lng!",
+    position: mapaBase,
+    });
+    infoWindow.open(map);
+
+    map.addListener("click", (mapsMouseEvent) => {
+        //Cierra la ventana
+        infoWindow.close();
+
+        //Crea nuevas InfoWindows con latitud y longitud donde se haga click
+        infoWindow = new google.maps.InfoWindow({
+        position: mapsMouseEvent.latLng,
+        });
+        infoWindow.setContent(
+            JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+        );
+        infoWindow.open(map);
+  });
+
 }
 
 //Capturo los datos del formulario
