@@ -54,9 +54,9 @@ function agregarDatos() {
                                                     '<div id="'+ nuevoPunto.name + '">' + nuevoPunto.name + '</div>' + '</td><td>' + 
                                                     nuevoPunto.direction + 
                                                     '</td><td>' +
-                                                    '<span class="material-icons">visibility</span>' +
-                                                    '<span> &macr;</span>' +
-                                                    '<span class="material-icons">delete</span>' +
+                                                    '<span class="material-icons" onclick="centrarMarcador()">visibility</span>' +
+                                                    /*'<span> &macr;</span>' +
+                                                    '<span class="material-icons">delete</span>' +*/
                                                     '</td></tr>';
     agregarMarcador();
 }
@@ -128,18 +128,27 @@ function agregarMarcador() {
 //Función para buscar por nombre
 function buscarPorNombre(){
     var nombre = document.getElementById("busquedaNombre").value;
-        //console.log(nombre);
-        var newArray = listadoDePuntos.filter(function(element){
-            return (element.name == nombre);
-        })
-        //console.log(newArray);
-        //console.log(newArray[0].arrayLatLng);
+    //console.log(nombre);
+    var newArray = listadoDePuntos.filter(function(element){
+        return (element.name == nombre);
+    })
+    //console.log(newArray);
+    //console.log(newArray[0].arrayLatLng);
 
-        var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
-        map.setCenter(centrarEn);
+    var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
+    map.setCenter(centrarEn);
 }
 
-
+//Función para centrar el mapa en un marcador haciendo click en el icono del ojo en la tabla
+function centrarMarcador(){
+    var nombreMarcador = document.getElementById(nuevoPunto.name).innerHTML;
+    console.log(nombreMarcador);
+    var newArray = listadoDePuntos.filter(function(element){
+        return (element.name == nombreMarcador);
+    })
+    var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
+    map.setCenter(centrarEn);
+}
 
 
 // Challenge
