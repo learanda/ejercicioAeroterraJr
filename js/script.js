@@ -126,19 +126,18 @@ function agregarMarcador() {
 
 
 //Función para buscar por nombre
-function set(){
-    setTimeout(() => {
+function buscarPorNombre(){
+    var nombre = document.getElementById("busquedaNombre").value;
+        //console.log(nombre);
         var newArray = listadoDePuntos.filter(function(element){
-            return (element.name == 'a');
+            return (element.name == nombre);
         })
         //console.log(newArray);
         //console.log(newArray[0].arrayLatLng);
 
         var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
         map.setCenter(centrarEn);
-    }, 5000);
 }
-set();
 
 
 
