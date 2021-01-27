@@ -74,10 +74,15 @@ function agregarMarcador() {
         });
         map.setCenter(newMarker);
 
+        
     var popupText = '<div><b>Descripción:</b> ' + nuevoPunto.name + '</div>' + 
                     '<div><b>Dirección:</b> ' + nuevoPunto.direction + '</div>' + 
                     '<div><b>Teléfono:</b> ' + nuevoPunto.phone + '</div>' + 
-                    '<div><b>Coordenadas:</b> ' + nuevoPunto.arrayLatLng[0] + ',' + nuevoPunto.arrayLatLng[1] + '</div>';
+                    '<div><b>Coordenadas:</b> ' + nuevoPunto.arrayLatLng[0] + ',' + nuevoPunto.arrayLatLng[1] + '</div>' +
+                    '<span class="material-icons" id="hide">visibility</span>' +
+                    '<span> &macr;</span>' +
+                    '<span class="material-icons">delete</span>';
+    
 
     var popupWindow = new google.maps.InfoWindow({
         content: popupText
@@ -85,9 +90,58 @@ function agregarMarcador() {
 
     marker.addListener('click', function(){
         popupWindow.open(map, marker);
+
+        function resolverEn10Milisegundos() {
+              setTimeout(() => {
+                var spanVisibilidad = document.getElementById("hide");
+                spanVisibilidad.addEventListener('click', function(){
+                
+                    marker.setMap(null);
+                
+                })
+              }, 10);
+        }
+
+        resolverEn10Milisegundos();
+
+        /* function resolverEn10Milisegundos() {
+            return new Promise(resolve => {
+              setTimeout(() => {
+
+                var spanVisibilidad = document.getElementById("hide");
+                spanVisibilidad.addEventListener('click', function(){
+                if(marker.setVisible(true)){
+                    marker.setMap(null);
+                } else { marker.setVisible(false); }
+                })
+
+              }, 10);
+            });
+        }
+          
+        async function llamadaAsincronica() {
+            const result = await resolverEn10Milisegundos();
+        }
+        
+        llamadaAsincronica(); */
     })
     console.log(listadoDePuntos);
+
+    
+    
+
+    /*
+    var spanVisibilidad = document.getElementById("hide");
+    if(spanVisibilidad){
+        spanVisibilidad.addEventListener('click', function(){
+            if(marker.setVisible(true)){
+                marker.setVisible(false);
+            } else { marker.setVisible(false); }
+        })
+    } else { console.log("null"); }*/
 } 
+
+
 
 
 // Challenge
