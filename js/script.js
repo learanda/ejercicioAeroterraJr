@@ -51,7 +51,7 @@ function agregarDatos() {
     listadoDePuntos.push(nuevoPunto);
     //console.log(listadoDePuntos);
     document.getElementById("body").innerHTML += '<tr><td>' + 
-                                                    nuevoPunto.name +'</td><td>' + 
+                                                    '<div id="'+ nuevoPunto.name + '">' + nuevoPunto.name + '</div>' + '</td><td>' + 
                                                     nuevoPunto.direction + 
                                                     '</td><td>' +
                                                     '<span class="material-icons">visibility</span>' +
@@ -124,6 +124,8 @@ function agregarMarcador() {
     console.log(listadoDePuntos);
 }
 
+
+//Función para buscar por nombre
 function set(){
     setTimeout(() => {
         var newArray = listadoDePuntos.filter(function(element){
@@ -133,12 +135,8 @@ function set(){
         //console.log(newArray[0].arrayLatLng);
 
         var centrarEn = new google.maps.LatLng(newArray[0].arrayLatLng[0],newArray[0].arrayLatLng[1]);
-        //var mapaBase = { lat: -34.6020549, lng: -58.3818864 };
-
         map.setCenter(centrarEn);
-      
     }, 5000);
-    
 }
 set();
 
